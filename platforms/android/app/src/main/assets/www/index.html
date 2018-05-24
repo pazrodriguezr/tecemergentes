@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+            <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+            <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+        window.fn = {};
+
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
+
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+        </script>
+        <ons-splitter>
+                <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+                  <ons-page>
+                    <ons-list>
+                      <ons-list-item onclick="fn.load('programa.html')" tappable>
+                        Programa
+                      </ons-list-item>
+                      <ons-list-item onclick="fn.load('temas.html')" tappable>
+                        Temas
+                      </ons-list-item>
+                      <ons-list-item onclick="fn.load('foros.html')" tappable>
+                        Foros
+                      </ons-list-item>
+                      <ons-list-item onclick="fn.load('actividades.html')" tappable>
+                        Actividades
+                      </ons-list-item>
+                      <ons-list-item onclick="fn.load('calificaciones.html')" tappable>
+                        Calificaciones
+                      </ons-list-item>
+                      <ons-list-item onclick="fn.load('calendario.html')" tappable>
+                        Calendario
+                      </ons-list-item>
+                    </ons-list>
+                  </ons-page>
+                </ons-splitter-side>
+                <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+              </ons-splitter>
+              
+              <template id="home.html">
+                    <ons-page>
+                      <ons-toolbar>
+                        <div class="left">
+                          <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                          </ons-toolbar-button>
+                        </div>
+                        <div class="center">
+                          Tecnologías emergentes
+                        </div>
+                      </ons-toolbar>
+                      <div class="content">
+                      <pre style="text-align: justify; opacity: 0.6; padding-top: 20px; font: 0.9em sans-serif;">
+                          Esta asignatura de la Escuela de Ingeniería de UNIR está diseñada por la Cátedra ATOS en Innovación Tecnológica 
+                          (bajo la dirección de UNIR Research http://research.unir.net), que proporciona una visión actualizada y transversal 
+                          sobre tecnologías emergentes en el ámbito de la Informática. Representa un esfuerzo colaborativo de construcción, 
+                          clasificación y compartición de información y conocimiento. Como tal, es una asignatura viva, que construimos entre todos, 
+                          edición tras edición.
+                          Al carácter de actualidad que se le presupone por su título, debemos añadirle el carácter de proyección en el futuro, 
+                          de previsión sobre todo aquello que será actualidad en los próximos meses y años. Sin llegar a imprimir un enfoque visionario,
+                          todos haremos el análisis y el esfuerzo de posicionar de manera razonada aquellas tecnologías recientes, incipientes o en 
+                          clara progresión que muestran potencial para ser claves.
+                          No esperemos textos largos, ni un ejercicio de memorización, ni aprobados o suspensos en función de cierto-falso. 
+                          Se busca la originalidad, la coherencia y el posicionamiento razonados para que, de cara a uno mismo, 
+                          y por equilibrio con los demás compañeros, se perfile una identidad clara y única de cada aportación.
+                      </pre>
+                    </div>
+                    </ons-page>
+              </template>
+
+              <template id="programa.html">
+                <ons-page>
+                  <ons-toolbar>
+                    <div class="left">
+                      <ons-toolbar-button onclick="fn.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                      </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                      Programa
+                    </div>
+                  </ons-toolbar>
+                  <ons-list>
+                        <on-list-header>Contenidos</on-list-header>
+                        <ons-list-item expandable>
+                              Tema 1. Geo-posicionamiento y geo-referenciación
+                              <div class="expandable-content">
+                              	<ul>
+                                  <li>Qué es un GIS: componentes, herramientas y cartografía</li>
+                                  <li>Geo-posicionamiento, geo-referenciación y geo-localización</li>
+                                </ul>  
+                              </div>
+                        </ons-list-item>
+                        <ons-list-item expandable>
+                              Tema 2. Experiencia personalizada de usuario
+                              <div class="expandable-content">
+                              	<ul>
+                                      <li>Condicionantes de la experiencia</li>
+                                      <li>Cómo mejorar la experiencia</li>
+                                      <li>Aplicación de la gestión de la experiencia </li>
+                                </ul>      
+                              </div>
+                        </ons-list-item>
+                        <ons-list-item expandable>
+                              Tema 3. HCI Voz
+                              <div class="expandable-content">
+                              	<ul>
+                                      <li>Introducción al HCI: Voz</li>
+                                      <li>Fundamentos técnicos de HCI: Voz</li>
+                                      <li>Fundamentos comerciales de HCI: Voz</li>
+                                      <li>Ejemplos de aplicaciones comerciales</li>
+                                </ul>      
+                              </div>
+                        </ons-list-item>
+                        <ons-list-item expandable>
+                              Tema 4. Unlicensed Mobile Access (UMA)
+                              <div class="expandable-content">
+                              	<ul>
+                                      <li>Introducción y evolución</li>
+                                      <li>Descripción de la arquitectura UMA</li>
+                                      <li>Estándares y protocolos</li>
+                                      <li>Aplicaciones y Servicios</li>
+                                </ul>
+                              </div>
+                        </ons-list-item>
+                        <ons-list-item expandable>
+                              Tema 5. Biometría
+                              <div class="expandable-content">
+                              	<ul>
+                                      <li>Introducción a la biometría</li>
+                                      <li>Principales modalidades biométricas y su aplicabilidad I</li>
+                                      <li>Principales modalidades biométricas y su aplicabilidad II</li>
+                                      <li>Tendencias biométricas</li>
+                                </ul>
+                              </div>
+                        </ons-list-item>
+                        <ons-list-item expandable>
+                              Tema 6. Web Semántica
+                              <div class="expandable-content">
+                              	<ul>
+                                      <li>Introducción a la web semántica</li>
+                                      <li>Qué es la web semántica</li>
+                                      <li>Aplicaciones semánticas</li>
+                                      <li>Tecnologías semánticas</li>
+                                </ul>      
+                              </div>
+                        </ons-list-item>
+                        <ons-list-item expandable>
+                              Tema 7. Cloud computing
+                              <div class="expandable-content">
+                              	<ul>
+                                      <li>Introducción: qué es cloud computing, características y tipologías</li>
+                                      <li>Visión de negocio de cloud computing</li>
+                                      <li>Los clouds privados</li>
+                                      <li>Retos y tendencias</li>
+                                </ul>
+                              </div>
+                        </ons-list-item>
+                        <ons-list-item expandable>
+                              Tema 8. Composición de servicios y SOA
+                              <div class="expandable-content">
+                              	<ul>
+                                      <li>Introducción: SOA, composición de servicios y procesos de negocio</li>
+                                      <li>Diferentes aspectos en la composición de servicios</li>
+                                      <li>Lenguajes de modelado de procesos</li>
+                                      <li>Composición en entorno web</li>
+                                      <li>Herramientas para la composición de servicios</li>
+                                      <li>Extensiones</li>
+                                      <li>Problemáticas, limitaciones y tendencias</li>
+                                </ul>                                            
+                              </div>
+                        </ons-list-item>
+                        <ons-list-item expandable>
+                              Tema 9. Enterprise Content Management (ECM)
+                              <div class="expandable-content">
+                              	<ul>
+                                      <li>Introducción al ECM</li>
+                                      <li>Análisis tecnológico</li>
+                                      <li>Análisis del mercado</li>
+                                      <li>Análisis de fabricantes</li>
+                                      <li>Diseñar una estrategia ECM</li>
+                                      <li>Alternativas a estrategias ECM</li>
+                                </ul>      
+                              </div>
+                        </ons-list-item>
+                        <ons-list-item expandable>
+                              Tema 10. Green-IT
+                              <div class="expandable-content">
+                              	<ul>
+                                      <li>Introducción a Green-IT</li>
+                                      <li>Ámbitos de aplicación</li>
+                                      <li>Green IT en centros de datos</li>
+                                      <li>Regulación e iniciativas industriales</li>
+                                      <li>Claves para una estrategia de Green-IT</li>
+                                      <li>Las 10 empresas más ‘verdes’</li>
+                                </ul>      
+                              </div>
+                        </ons-list-item>
+                    </ons-list>
+                </ons-page>
+              </template>
+              
+              <template id="temas.html">
+                <ons-page>
+                  <ons-toolbar>
+                    <div class="left">
+                      <ons-toolbar-button onclick="fn.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                      </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                      Temas
+                    </div>
+                  </ons-toolbar>
+                  <ons-list>
+                    <ons-list-header>Temas</ons-list-header>
+                    <ons-list-item>
+                      <ons-icon icon="fa-file">&nbsp;</ons-icon>
+                      <a href="https://campusvirtual.unir.net/access/lessonbuilder/item/5176289/group/PER90-201-3455/Documentaci%C3%B3n/PV_Tema1Sesio%CC%81n2.pdf" download="PV_Tema1Sesión2.pdf">PV_Tema1Sesión2.pdf</a>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <ons-icon icon="fa-file">&nbsp;</ons-icon>  
+                        <a href="https://campusvirtual.unir.net/access/lessonbuilder/item/5182058/group/PER90-201-3455/Documentaci%C3%B3n/PV_Tema2.pdf" download="PV_Tema2.pdf">PV_Tema2.pdf</a>
+                    </ons-list-item>
+                  </ons-list>
+                </ons-page>
+              </template>
+              
+              <template id="foros.html">
+                <ons-page>
+                  <ons-toolbar>
+                    <div class="left">
+                      <ons-toolbar-button onclick="fn.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                      </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                      Foros
+                    </div>
+                  </ons-toolbar>
+                </ons-page>
+              </template>
+
+              <template id="actividades.html">
+                    <ons-page>
+                      <ons-toolbar>
+                        <div class="left">
+                          <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                          </ons-toolbar-button>
+                        </div>
+                        <div class="center">
+                          Actividades
+                        </div>
+                      </ons-toolbar>
+                      <ons-card>
+                        <div class="title">
+                          Actividad 1
+                        </div>
+                        <div>
+                            <ons-icon icon="ion-hammer"></ons-icon>
+                            <p><b>Trabajo: Análisis de tecnologías emergentes I</b></p>
+                        </div>
+                      </ons-card>
+                      <ons-card>
+                          <div class="title">
+                            Actividad 2
+                          </div>
+                          <div>
+                              <ons-icon icon="ion-hammer"></ons-icon>
+                              <p><b>Trabajo: Análisis de tecnologías emergentes II</b></p>
+                          </div>
+                        </ons-card>
+                        <ons-card>
+                            <div class="title">
+                              Actividad 3
+                            </div>
+                            <div>
+                                <ons-icon icon="ion-hammer"></ons-icon>
+                                <p><b>Trabajo: Experiencia en Cloud Computing</b></p>
+                            </div>
+                        </ons-card>
+                        <ons-card>
+                              <div class="title">
+                                Actividad 4
+                              </div>
+                              <div>
+                                  <ons-icon icon="ion-hammer"></ons-icon>
+                                  <p><b>Trabajo: Actividad final de la asignatura: Aportación de tecnología emergente innovadora</b></p>
+                              </div>
+                        </ons-card>
+                    </ons-page>
+                  </template>
+
+                  <template id="calificaciones.html">
+                        <ons-page>
+                          <ons-toolbar>
+                            <div class="left">
+                              <ons-toolbar-button onclick="fn.open()">
+                                <ons-icon icon="md-menu"></ons-icon>
+                              </ons-toolbar-button>
+                            </div>
+                            <div class="center">
+                              Calificaciones
+                            </div>
+                          </ons-toolbar>
+                        </ons-page>
+                      </template>
+
+                      <template id="calendario.html">
+                            <ons-page>
+                              <ons-toolbar>
+                                <div class="left">
+                                  <ons-toolbar-button onclick="fn.open()">
+                                    <ons-icon icon="md-menu"></ons-icon>
+                                  </ons-toolbar-button>
+                                </div>
+                                <div class="center">
+                                  Calendario
+                                </div>
+                              </ons-toolbar>
+                            </ons-page>
+                          </template>
+    </body>
+</html>
